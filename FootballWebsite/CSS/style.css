@@ -1,0 +1,28 @@
+﻿body { background:yellow; }
+
+.deletedplayershighlight {
+    color: green;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#container {background:grey; width:900px; margin: 0 auto; border: solid 2px black; }
+
+#menu {
+    background: grey; padding:20px; width:600px; float:left
+}
+
+#date {
+    background: white; padding:20px; width:220px; float:right;
+    font-weight: 700;
+}
+
+#content {
+    background: orange; padding:20px; clear:both;
+
+}
+
+#footer {
+    background: orange; padding:20px;
+}

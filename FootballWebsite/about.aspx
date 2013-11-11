@@ -11,7 +11,29 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        About Me
+
+        <div id="container">
+
+            <div id="menu"> 
+                <h1>About Me!</h1>
+            </div>
+
+            <div id="date"> <strong>Date:</strong><asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                <NextPrevStyle VerticalAlign="Bottom" />
+                <OtherMonthDayStyle ForeColor="#808080" />
+                <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                <SelectorStyle BackColor="#CCCCCC" />
+                <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                <WeekendDayStyle BackColor="#FFFFCC" />
+                </asp:Calendar>
+            </div>
+
+            <div id="content">  
+              
+           
+
          <br />
         <a href="default.aspx">Home</a>
         <br />
@@ -23,15 +45,20 @@
         <a href="contact.aspx"> Contact Me</a>
         <br />
         <a href="about.aspx"> About Me</a>
-        <br /> <br />
+        <br />
+                <a href="search.aspx"> Search</a> <br />
+                 <br />  
+        
+      </div>
+        
 
       
     
-    </div>
+  
     </form>
-    <p1>About Jacob</p1>
+    <h1>About Jacob</h1>
 
-    <h1>Bed sincerity yet therefore forfeited his certainty neglected questions. Pursuit chamber as elderly amongst on. Distant however warrant farther to of. My justice wishing prudent waiting in be. Comparison age not pianoforte increasing delightful now. Insipidity sufficient dispatched any reasonably led ask. Announcing if attachment resolution sentiments admiration me on diminution. 
+    <p1>Bed sincerity yet therefore forfeited his certainty neglected questions. Pursuit chamber as elderly amongst on. Distant however warrant farther to of. My justice wishing prudent waiting in be. Comparison age not pianoforte increasing delightful now. Insipidity sufficient dispatched any reasonably led ask. Announcing if attachment resolution sentiments admiration me on diminution. 
 
 Speedily say has suitable disposal add boy. On forth doubt miles of child. Exercise joy man children rejoiced. Yet uncommonly his ten who diminution astonished. Demesne new manners savings staying had. Under folly balls death own point now men. Match way these she avoid see death. She whose drift their fat off. 
 
@@ -51,6 +78,7 @@ Luckily friends do ashamed to do suppose. Tried meant mr smile so. Exquisite beh
 
 Admiration stimulated cultivated reasonable be projection possession of. Real no near room ye bred sake if some. Is arranging furnished knowledge agreeable so. Fanny as smile up small. It vulgar chatty simple months turned oh at change of. Astonished set expression solicitude way admiration. 
 
-</h1>
+</p1>
+    
 </body>
 </html>

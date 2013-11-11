@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-    Add new Player to Database.
+    
 
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CS_PlayersWebSite %>" DeleteCommand="DELETE FROM [Table] WHERE [playerId] = @playerId" InsertCommand="INSERT INTO [Table] ([playerFirstName], [playerLastName], [playerNumber], [playerTeam], [playerAge], [playerPosition]) VALUES (@playerFirstName, @playerLastName, @playerNumber, @playerTeam, @playerAge, @playerPosition)" SelectCommand="SELECT * FROM [Table] WHERE ([playerId] = @playerId)" UpdateCommand="UPDATE [Table] SET [playerFirstName] = @playerFirstName, [playerLastName] = @playerLastName, [playerNumber] = @playerNumber, [playerTeam] = @playerTeam, [playerAge] = @playerAge, [playerPosition] = @playerPosition WHERE [playerId] = @playerId">
             <DeleteParameters>
@@ -41,9 +41,21 @@
 
             <div id="container">
 
-            <div id="menu"> Menu </div>
+            <div id="menu"> 
+                <h1>Add new Player to Database. </h1>
+                </div>
 
-            <div id="date"> Date</div>
+            <div id="date"> <strong>Date:</strong><asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                <NextPrevStyle VerticalAlign="Bottom" />
+                <OtherMonthDayStyle ForeColor="#808080" />
+                <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                <SelectorStyle BackColor="#CCCCCC" />
+                <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                <WeekendDayStyle BackColor="#FFFFCC" />
+                </asp:Calendar>
+                </div>
 
             <div id="content">  
 
@@ -58,12 +70,13 @@
         <a href="contact.aspx"> Contact Me</a>
         <br />
         <a href="about.aspx"> About Me</a>
-        <br /> <br />
+        <br /> 
+               <a href="search.aspx"> Search</a> <br /> 
+                <br />
 
 
                  </div>
-              <div id="footer">Footer</div>
-              </div>
+              <div id="footer">
 
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" DataKeyNames="playerId" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="None" Height="95px" Width="485px" DefaultMode="Insert">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
@@ -82,6 +95,9 @@
             <PagerStyle BackColor="PaleGoldenrod" ForeColor="DarkSlateBlue" HorizontalAlign="Center" />
         </asp:DetailsView>
     
+                </div>
+              </div>
+
     </div>
     </form>
 </body>

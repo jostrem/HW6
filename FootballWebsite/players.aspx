@@ -6,11 +6,16 @@
 <head runat="server">
     <title></title>
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <style type="text/css">
+        .auto-style1 {
+            font-size: xx-large;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-    Players
+    
         <asp:SqlDataSource ID="PlayersDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:CS_PlayersWebSite %>" SelectCommand="SELECT * FROM [Table]" DeleteCommand="DELETE FROM [Table] WHERE [playerId] = @playerId" InsertCommand="INSERT INTO [Table] ([playerId], [playerFirstName], [playerLastName], [playerNumber], [playerTeam], [playerAge], [playerPosition]) VALUES (@playerId, @playerFirstName, @playerLastName, @playerNumber, @playerTeam, @playerAge, @playerPosition)" UpdateCommand="UPDATE [Table] SET [playerFirstName] = @playerFirstName, [playerLastName] = @playerLastName, [playerNumber] = @playerNumber, [playerTeam] = @playerTeam, [playerAge] = @playerAge, [playerPosition] = @playerPosition WHERE [playerId] = @playerId">
             <DeleteParameters>
                 <asp:Parameter Name="playerId" Type="Int32" />
@@ -39,9 +44,21 @@
 
         <div id="container">
 
-            <div id="menu"> Menu </div>
+            <div id="menu" class="auto-style1"> 
+                <h1>Players </h1>
+            </div>
 
-            <div id="date"> Date</div>
+            <div id="date"> <strong>Date:</strong><asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                <NextPrevStyle VerticalAlign="Bottom" />
+                <OtherMonthDayStyle ForeColor="#808080" />
+                <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                <SelectorStyle BackColor="#CCCCCC" />
+                <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                <WeekendDayStyle BackColor="#FFFFCC" />
+                </asp:Calendar>
+            </div>
 
             <div id="content">  
         <br />
@@ -55,17 +72,17 @@
         <a href="contact.aspx"> Contact Me</a>
         <br />
         <a href="about.aspx"> About Me</a>
-        <br /> <br />
+        <br /> 
+               <a href="search.aspx"> Search</a> <br /> 
+                <br />
 
      </div>
-            <div id="footer"> Footer</div>
-
- </div>
+            <div id="footer"> 
 
 
 
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False"
-             DataKeyNames="playerId" DataSourceID="PlayersDataSource" Height="344px" Width="1034px" AllowPaging="True" AllowSorting="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" PageSize="5">
+             DataKeyNames="playerId" DataSourceID="PlayersDataSource" Height="274px" Width="830px" AllowPaging="True" AllowSorting="True" BackColor="LightGoldenrodYellow" BorderColor="Tan" BorderWidth="1px" CellPadding="2" ForeColor="Black" GridLines="None" PageSize="5">
             <AlternatingRowStyle BackColor="PaleGoldenrod" />
             <Columns>
                 <asp:BoundField DataField="playerFirstName" HeaderText="First Name" SortExpression="playerFirstName" />
@@ -82,6 +99,12 @@
             <SortedDescendingHeaderStyle BackColor="#C2A47B" />
         </asp:GridView>
     
+            </div>
+
+ </div>
+
+
+
     </div>
     </form>
 </body>
